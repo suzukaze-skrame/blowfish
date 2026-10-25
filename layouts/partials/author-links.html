@@ -6,6 +6,8 @@
         <a
           class="{{ cond $isEmail "email-link" "" }} hover:text-primary-700 dark:hover:text-primary-400"
           href="{{ cond $isEmail "#" ($url | safeURL) }}"
+          data-umami-event="author-link-click"
+          data-umami-event-platform="{{ $name }}"
           {{ if eq $name "email" }}
             data-email="{{ $url | base64Encode }}"
           {{ end }}
